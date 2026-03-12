@@ -12,7 +12,7 @@ class ImageProcessor:
         if result_dir == None:
             record_time = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
             self.result_dir = 'results/{}'.format(record_time)
-            os.mkdir(self.result_dir)
+            os.makedirs(self.result_dir, exist_ok=True) 
         else:
             self.result_dir = result_dir
 
